@@ -12,6 +12,7 @@
 </template>-->
 <template>
   <el-menu :default-openeds="[]">
+    <router-link to="Home"><el-menu-item>首頁</el-menu-item></router-link>
     <el-submenu index="1">
       <template slot="title"><i class="el-icon-message"></i>欄一</template>
       <router-link to="billing"><el-menu-item>一</el-menu-item></router-link>
