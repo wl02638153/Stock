@@ -1,3 +1,5 @@
+
+
 module.exports = {
   presets: ["@vue/app"],
   plugins: [
@@ -6,7 +8,7 @@ module.exports = {
       {
         libraryName: "element-ui",
         styleLibraryName: "theme-chalk"
-      }
+      },
     ]
   ]
 };

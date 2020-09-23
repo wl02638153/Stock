@@ -5,6 +5,21 @@ import store from './store'
 import './plugins/element.js'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+//import './custom.scss'
+import 'bootstrap'
+import 'admin-lte/dist/css/adminlte.min.css'
+import 'admin-lte/dist/js/adminlte.min.js'
+
+
+
+import $ from 'jquery';
+// 讓瀏覽器的全域環境可以使用到 $
+// import jQuery from 'jquery'
+// window.$ = window.jQuery = jQuery
+
 //import "./assets/scss/common.scss";
 
 //AdminLTE
@@ -22,6 +37,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+//Vue.use($);
 new Vue({
   router,
   store,
