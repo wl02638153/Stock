@@ -1,49 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
-
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: ()=>import('../views/App.vue'),
-    // children:[
-    //   {
-    //     path: '/billing',
-    //     name: 'billing',
-    //     component: () => import('../views/layout/Sidebar/Billing'),
-    //     meta: { title: '月記帳本', icon: 'el-icon-notebook-1' }
-    //   },
-    //   {
-    //     path: '/account',
-    //     name: 'account',
-    //     component: () => import('../views/layout/Sidebar/Account'),
-    //     meta: { title: '帳戶管理', icon: 'el-icon-money' }
-    //   },
-    //   {
-    //     path: '/charts',
-    //     name: 'charts',
-    //     component: () => import('../views/layout/Sidebar/Charts'),
-    //     meta: { title: '圖表分析', icon: 'el-icon-pie-chart' }
-    //   }
-    // ]
+    //component: ()=>import('../views/App.vue'),
+    //component: ()=>import('../views/layout/Sidebar/Charts'),
+    component: {template: '<div>Home</div>'},
+    //component: {template: '<router-view></router-view>'},
+    
   },
   {
-    path: '/billing',
-    name: 'billing',
-    component: () => import('../views/layout/Sidebar/Billing'),
-    meta: { title: '月記帳本', icon: 'el-icon-notebook-1' }
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/layout/Sidebar/Admin'),
+    children:[
+      {
+        path: 'billing',
+        name: 'billing',
+        component: () => import('../views/layout/Sidebar/Billing'),
+        meta: { title: '月記帳本', icon: 'el-icon-notebook-1',path:'/admin/billing' }
+      },
+      {
+        path: 'account',
+        name: 'account',
+        component: () => import('../views/layout/Sidebar/Account'),
+        meta: { title: '帳戶管理', icon: 'el-icon-money',path:'/admin/account' }
+      },
+      {
+        path: 'charts',
+        name: 'charts',
+        component: () => import('../views/layout/Sidebar/Charts'),
+        meta: { title: '圖表分析', icon: 'el-icon-pie-chart',path:'/admin/charts' }
+      }
+    ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+
+  
 ]
 
 const router = new VueRouter({
